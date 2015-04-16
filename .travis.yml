@@ -1,0 +1,18 @@
+language: php
+php:
+  - 5.6
+  - 5.5
+  - 5.4
+  - hhvm
+  - hhvm-nightly
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source --dev
+script:
+  - vendor/bin/peridot -r dot spec
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm-nightly
+notifications:
+  email: false
