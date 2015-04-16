@@ -1,8 +1,10 @@
 <?php
 
 use holyshared\fixture\peridot\FileFixturePlugin;
+use Peridot\Core\Suite;
 use Prophecy\Prophet;
 use Prophecy\Argument;
+
 
 describe('FileFixturePlugin', function() {
     describe('#registerTo()', function() {
@@ -16,8 +18,21 @@ describe('FileFixturePlugin', function() {
 
             $this->plugin->registerTo( $emitter->reveal() );
         });
-        it('regiser plugin', function() {
+        it('registered plugin object to emitter', function() {
             $this->prophet->checkPredictions();
+        });
+    });
+    describe('#onSuiteStart()', function() {
+        beforeEach(function() {
+            $this->suite = new Suite('default', function() {});
+            $this->plugin = new FileFixturePlugin(__DIR__ . '/fixtures/fixtures.toml');
+            $this->plugin->onStart();
+            $this->plugin->onSuiteStart($this->suite);
+        });
+        it('registered the fixture scope object to the parent of scope object', function() {
+            $scope = $this->suite->getScope();
+            $childScopes = $scope->peridotGetChildScopes();
+            expect($childScopes)->toHaveLength(1);
         });
     });
 });

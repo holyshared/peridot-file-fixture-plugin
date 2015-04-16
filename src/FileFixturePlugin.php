@@ -11,12 +11,12 @@
 
 namespace holyshared\fixture\peridot;
 
-use holsyahred\fixture\FileFixture;
-use holsyahred\fixture\factory\FxitureContainerFactory;
-use holsyahred\fixture\container\LoaderContainer;
-use holsyahred\fixture\loader\TextLoader;
-use holsyahred\fixture\loader\MustacheLoader;
-use holsyahred\fixture\loader\ArtLoader;
+use holyshared\fixture\FileFixture;
+use holyshared\fixture\factory\FixtureContainerFactory;
+use holyshared\fixture\container\LoaderContainer;
+use holyshared\fixture\loader\TextLoader;
+use holyshared\fixture\loader\MustacheLoader;
+use holyshared\fixture\loader\ArtLoader;
 use Evenement\EventEmitterInterface;
 use Peridot\Core\Suite;
 
@@ -46,7 +46,7 @@ class FileFixturePlugin implements Registrar
 
         $loaders = new LoaderContainer([ $textLoader, $mustacheLoader, $artLoader]);
 
-        $factory = new FxitureContainerFactory();
+        $factory = new FixtureContainerFactory();
         $fixtures = $factory->createFromFile($this->configFile);
 
         $fixture = new FileFixture($fixtures, $loaders);
