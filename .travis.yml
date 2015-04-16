@@ -10,6 +10,8 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-source --dev
 script:
   - vendor/bin/peridot -r dot spec
+after_script:
+  - composer coveralls
 matrix:
   fast_finish: true
   allow_failures:
