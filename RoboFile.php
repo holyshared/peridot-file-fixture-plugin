@@ -5,7 +5,6 @@ use \coverallskit\robo\loadTasks as CoverallsKitTasks;
 
 class RoboFile extends Tasks
 {
-    use PeridotTasks;
     use CoverallsKitTasks;
 
     public function coverallsUpload()
@@ -16,5 +15,4 @@ class RoboFile extends Tasks
 
         return $result;
     }
-
 }
