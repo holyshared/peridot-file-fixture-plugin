@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/holyshared/peridot-file-fixture-plugin.png?label=ready&title=Ready)](https://waffle.io/holyshared/peridot-file-fixture-plugin)
 peridot-file-fixture-plugin
 ====================================
 
