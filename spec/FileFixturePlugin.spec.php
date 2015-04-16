@@ -7,9 +7,8 @@ use Prophecy\Argument;
 describe('FileFixturePlugin', function() {
     describe('#registerTo()', function() {
         beforeEach(function() {
-            $this->plugin = new FileFixturePlugin();
-
             $this->prophet = new Prophet();
+            $this->plugin = new FileFixturePlugin(__DIR__ . '/fixtures/fixtures.toml');
 
             $emitter = $this->prophet->prophesize('Evenement\EventEmitterInterface');
             $emitter->on(FileFixturePlugin::START_EVENT, [ $this->plugin, 'onStart' ]);
