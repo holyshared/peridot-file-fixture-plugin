@@ -1,0 +1,19 @@
+{
+    "name": "holyshared/peridot-file-fixture-plugin",
+    "require-dev": {
+        "peridot-php/peridot": "~1.15",
+        "peridot-php/peridot-dot-reporter": "~1.0",
+        "cloak/peridot-cloak-plugin": "~1.3",
+        "expect/peridot-expect-plugin": "~2.0",
+        "holyshared/file-fixture": "0.1.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "holyshared",
+            "email": "holy.shared.design@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
