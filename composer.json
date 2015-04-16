@@ -1,5 +1,7 @@
 {
     "name": "holyshared/peridot-file-fixture-plugin",
+    "keyword": ["peridot", "peridot-php", "untitest", "plugin", "fixture"],
+    "description": "File fixture for peridot",
     "require": {
         "peridot-php/peridot": "~1.15"
     },
