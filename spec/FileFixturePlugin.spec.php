@@ -28,11 +28,11 @@ describe('FileFixturePlugin', function() {
             $this->plugin = new FileFixturePlugin(__DIR__ . '/fixtures/fixtures.toml');
             $this->plugin->onStart();
             $this->plugin->onSuiteStart($this->suite);
+            $this->scope = $this->suite->getScope();
         });
         it('registered the fixture scope object to the parent of scope object', function() {
-            $scope = $this->suite->getScope();
-            $childScopes = $scope->peridotGetChildScopes();
-            expect($childScopes)->toHaveLength(1);
+            $content = $this->scope->loadFixture('text:default:ok');
+            expect($content)->toEqual("static\n");
         });
     });
 });
