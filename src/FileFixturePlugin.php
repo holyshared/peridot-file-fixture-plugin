@@ -15,6 +15,7 @@ use holyshared\fixture\FileFixture;
 use holyshared\fixture\factory\FixtureContainerFactory;
 use holyshared\fixture\container\LoaderContainer;
 use holyshared\fixture\loader\TextLoader;
+use holyshared\fixture\loader\CacheLoader;
 use holyshared\fixture\loader\MustacheLoader;
 use holyshared\fixture\loader\ArtLoader;
 use Evenement\EventEmitterInterface;
@@ -24,9 +25,22 @@ use Peridot\Core\Suite;
 class FileFixturePlugin implements Registrar
 {
 
+    /**
+     * @var \holyshared\fixture\peridot\FileFixtureScope
+     */
     private $scope;
+
+    /**
+     * @var string
+     */
     private $configFile;
 
+
+    /**
+     * Create a new plugin
+     *
+     * @param string $configFile
+     */
     public function __construct($configFile)
     {
         $this->configFile = $configFile;
@@ -40,11 +54,15 @@ class FileFixturePlugin implements Registrar
 
     public function onStart()
     {
-        $textLoader = new TextLoader();
+        $textLoader = new CacheLoader(new TextLoader());
         $mustacheLoader = new MustacheLoader($textLoader);
         $artLoader = new ArtLoader($mustacheLoader);
 
-        $loaders = new LoaderContainer([ $textLoader, $mustacheLoader, $artLoader]);
+        $loaders = new LoaderContainer([
+            $textLoader,
+            $mustacheLoader,
+            $artLoader
+        ]);
 
         $factory = new FixtureContainerFactory();
         $fixtures = $factory->createFromFile($this->configFile);
@@ -55,6 +73,9 @@ class FileFixturePlugin implements Registrar
         return $this;
     }
 
+    /**
+     * @param \Peridot\Core\Suite $suite
+     */
     public function onSuiteStart(Suite $suite)
     {
         $parentScope = $suite->getScope();

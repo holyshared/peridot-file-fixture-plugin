@@ -19,12 +19,12 @@ final class FileFixtureScope extends Scope
 {
 
     /**
-     * @var holyshared\fixture\Loadable
+     * @var \holyshared\fixture\Loadable
      */
     private $loader;
 
     /**
-     * @param holyshared\fixture\Loadable $loader
+     * @param \holyshared\fixture\Loadable $loader
      */
     public function __construct(Loadable $loader)
     {
