@@ -11,7 +11,7 @@
 
 namespace holyshared\fixture\peridot;
 
-use holyshared\fixture\Loadable;
+use holyshared\fixture\Loader;
 use Peridot\Core\Scope;
 
 
@@ -19,14 +19,14 @@ final class FileFixtureScope extends Scope
 {
 
     /**
-     * @var \holyshared\fixture\Loadable
+     * @var \holyshared\fixture\Loader
      */
     private $loader;
 
     /**
-     * @param \holyshared\fixture\Loadable $loader
+     * @param \holyshared\fixture\Loader $loader
      */
-    public function __construct(Loadable $loader)
+    public function __construct(Loader $loader)
     {
         $this->loader = $loader;
     }
