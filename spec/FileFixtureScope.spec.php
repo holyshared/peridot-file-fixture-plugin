@@ -8,7 +8,7 @@ describe('FileFixtureScope', function() {
         beforeEach(function() {
             $prophet = new Prophet();
 
-            $loader = $prophet->prophesize('holyshared\fixture\Loadable');
+            $loader = $prophet->prophesize('holyshared\fixture\Loader');
             $loader->load('text:test', [])->willReturn('fixture content');
 
             $this->scope = new FileFixtureScope( $loader->reveal() );

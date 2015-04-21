@@ -32,7 +32,7 @@ describe('FileFixturePlugin', function() {
         });
         it('registered the fixture scope object to the parent of scope object', function() {
             $content = $this->scope->loadFixture('text:default:ok');
-            expect($content)->toEqual("static\n");
+            expect($content)->toEqual("static");
         });
     });
 });
