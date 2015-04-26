@@ -1,6 +1,6 @@
 <?php
 
-use holyshared\fixture\peridot\FileFixtureScope;
+use holyshared\peridot\FileFixtureScope;
 use Prophecy\Prophet;
 
 describe('FileFixtureScope', function() {

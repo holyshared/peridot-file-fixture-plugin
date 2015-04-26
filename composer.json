@@ -23,7 +23,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "holyshared\\fixture\\peridot\\": "src"
+            "holyshared\\peridot\\": "src"
         }
     },
     "scripts": {
