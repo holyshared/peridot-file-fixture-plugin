@@ -4,7 +4,7 @@
     "description": "File fixture for peridot",
     "require": {
         "peridot-php/peridot": "~1.15",
-        "holyshared/file-fixture": "~0.3"
+        "holyshared/file-fixture": "~0.4"
     },
     "require-dev": {
         "peridot-php/peridot-dot-reporter": "~1.0",
