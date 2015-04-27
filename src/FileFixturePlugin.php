@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace holyshared\fixture\peridot;
+namespace holyshared\peridot;
 
 use holyshared\fixture\FileFixture;
 use holyshared\fixture\factory\FixtureContainerFactory;
@@ -26,7 +26,7 @@ class FileFixturePlugin implements Registrar
 {
 
     /**
-     * @var \holyshared\fixture\peridot\FileFixtureScope
+     * @var \holyshared\peridot\FileFixtureScope
      */
     private $scope;
 

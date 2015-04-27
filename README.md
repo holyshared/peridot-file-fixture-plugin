@@ -16,7 +16,7 @@ Please the configuration file see the [file-fixture](https://github.com/holyshar
 
 ```php
 use Evenement\EventEmitterInterface;
-use holyshared\fixture\peridot\FileFixturePlugin;
+use holyshared\peridot\FileFixturePlugin;
 
 return function(EventEmitterInterface $emitter)
 {

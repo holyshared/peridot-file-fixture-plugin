@@ -1,6 +1,6 @@
 <?php
 
-use holyshared\fixture\peridot\FileFixturePlugin;
+use holyshared\peridot\FileFixturePlugin;
 use Peridot\Core\Suite;
 use Prophecy\Prophet;
 use Prophecy\Argument;

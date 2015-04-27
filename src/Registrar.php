@@ -9,13 +9,13 @@
  * with this source code in the file LICENSE.
  */
 
-namespace holyshared\fixture\peridot;
+namespace holyshared\peridot;
 
 use Evenement\EventEmitterInterface;
 
 /**
  * Interface Registrar
- * @package holyshared\peridot\fixture
+ * @package holyshared\peridot
  */
 interface Registrar
 {
