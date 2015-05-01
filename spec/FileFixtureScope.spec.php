@@ -2,19 +2,21 @@
 
 use holyshared\fixture\FileFixture;
 use holyshared\peridot\FileFixtureScope;
+use holyshared\fixture\Loader;
+use holyshared\fixture\Container;
 use Prophecy\Prophet;
 
-describe('FileFixtureScope', function() {
+describe(FileFixtureScope::class, function() {
     beforeEach(function() {
         $prophet = new Prophet();
 
-        $loader = $prophet->prophesize('holyshared\fixture\Loader');
+        $loader = $prophet->prophesize(Loader::class);
         $loader->load('/path/to/fixture', [])->willReturn('fixture content');
 
-        $fixtures = $prophet->prophesize('holyshared\fixture\Container');
+        $fixtures = $prophet->prophesize(Container::class);
         $fixtures->get('text:test')->willReturn('/path/to/fixture');
 
-        $loaders = $prophet->prophesize('holyshared\fixture\Container');
+        $loaders = $prophet->prophesize(Container::class);
         $loaders->get('text')->willReturn( $loader->reveal() );
 
         $fileFixture = new FileFixture($fixtures->reveal(), $loaders->reveal());

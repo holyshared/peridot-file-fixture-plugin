@@ -2,17 +2,18 @@
 
 use holyshared\peridot\FileFixturePlugin;
 use Peridot\Core\Suite;
+use Evenement\EventEmitterInterface;
 use Prophecy\Prophet;
 use Prophecy\Argument;
 
 
-describe('FileFixturePlugin', function() {
+describe(FileFixturePlugin::class, function() {
     describe('#registerTo()', function() {
         beforeEach(function() {
             $this->prophet = new Prophet();
             $this->plugin = new FileFixturePlugin(__DIR__ . '/fixtures/fixtures.toml');
 
-            $emitter = $this->prophet->prophesize('Evenement\EventEmitterInterface');
+            $emitter = $this->prophet->prophesize(EventEmitterInterface::class);
             $emitter->on(FileFixturePlugin::START_EVENT, [ $this->plugin, 'onStart' ]);
             $emitter->on(FileFixturePlugin::SUITE_START_EVENT, [ $this->plugin, 'onSuiteStart' ]);
 
