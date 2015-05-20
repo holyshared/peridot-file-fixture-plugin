@@ -9,8 +9,8 @@
     },
     "require-dev": {
         "peridot-php/peridot-dot-reporter": "~1.0",
-        "cloak/peridot-cloak-plugin": "~1.3",
-        "expect/peridot-expect-plugin": "~2.0",
+        "cloak/peridot-cloak-plugin": "~2.0",
+        "expect/peridot-expect-plugin": "~3.0",
         "phpspec/prophecy": "~1.4",
         "cloak/robo-coveralls-kit": "~2.1",
         "codegyre/robo": "~0.5"
