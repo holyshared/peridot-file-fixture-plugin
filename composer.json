@@ -4,7 +4,7 @@
     "description": "File fixture for peridot",
     "require": {
         "php": ">=5.5.0",
-        "peridot-php/peridot": "~1.15",
+        "peridot-php/peridot": "~1.16",
         "holyshared/file-fixture": "~1.0"
     },
     "require-dev": {
@@ -28,6 +28,7 @@
         }
     },
     "scripts": {
+        "test": "vendor/bin/peridot -r dot spec",
         "coveralls": "vendor/bin/robo coveralls:upload"
     },
     "minimum-stability": "stable"
