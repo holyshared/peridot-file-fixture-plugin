@@ -3,17 +3,15 @@ php:
   - 5.6
   - 5.5
   - hhvm
-  - hhvm-nightly
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer install --no-interaction --prefer-source --dev
+  - travis_retry composer install --no-interaction --prefer-source
 script:
   - vendor/bin/peridot -r dot spec
 after_script:
   - composer coveralls
 matrix:
   fast_finish: true
-  allow_failures:
-    - php: hhvm-nightly
 notifications:
   email: false
+sudo: false
